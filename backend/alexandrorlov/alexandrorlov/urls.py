@@ -19,6 +19,6 @@ from django.urls import path
 from create.views import index
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('edit/', index),
+    #path('admin/', admin.site.urls),
+    path('create/', index),
 ]
