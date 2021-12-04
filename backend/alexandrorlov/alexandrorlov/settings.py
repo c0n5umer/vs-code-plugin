@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-#dwex&$hk&ik0)=s1%v2s^(w$ruu^e$jkqfe0ns@t!xv=pf)yc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['vs-code-api.herokuapp.com']
 
 
 # Application definition

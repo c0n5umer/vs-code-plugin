@@ -3,7 +3,7 @@
   "publisher": "Aleksandr Orlov",
   "displayName": "Pastebin plugin",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.62.0"
   },

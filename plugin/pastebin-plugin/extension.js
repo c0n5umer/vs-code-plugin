@@ -19,17 +19,21 @@ function activate(context) {
 		}
 
 		path = path + selected + '&extension=' + extension;
-		url = 'https://vs-code-api.herokuapp.com'+ path;
-		url = encodeURI(url);
+		let url = 'https://vs-code-api.herokuapp.com/create/';
+		//url = encodeURI(url);
+
+		let body = 'text=' + encodeURIComponent(selected) + '&extension=' + encodeURIComponent(extension);
 
 		let XMLHttpRequest = require('xhr2');
 		let request = new XMLHttpRequest();
-		request.open('GET', url);
-		request.send();
+		request.open("POST", url, true);
+		request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		request.send(body);
 		request.onload = function() {
 			if (request.status != 200) {
 				vscode.window.showInformationMessage(`Server error ${request.status}: ${request.statusText}`)
 			} else {
+				//vscode.window.showInformationMessage(url + body);
 				if (request.response.split(" ")[0] == "Error:") {
 					vscode.env.clipboard.writeText('');
 					vscode.window.showInformationMessage(request.response);
